@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+import sys
+fp = open(sys.argv[1], 'r')
+
+lines = fp.readlines()
+
+for num in lines:
+    number = int(num)
+    if (number % 2) == 0:
+        print("{}={}*{}".format(number, number // 2, 2))
+    else:
+        div = 3
+        while (div <= number / 2):
+            if (number % div) == 0:
+                print("{}={}*{}".format(number, number // div, div))
+                break
+            else:
+                div += 2
